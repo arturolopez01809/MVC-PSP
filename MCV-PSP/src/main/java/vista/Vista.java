@@ -6,8 +6,8 @@
 package vista;
 
 import controlador.TablaBD;
-import datos.Alumno;
-import datos.Asignatura;
+import modelo.Alumno;
+import modelo.Asignatura;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -52,7 +52,7 @@ public class Vista {
     
     public void menu() throws SQLException{
         System.out.println("1) Mostrar alumnos pertenecientes al sistema");
-        System.out.println("2) Añadir nuevo alumno al sistema");
+        System.out.println("2) Mostrar asignaturas pertenecientes al sistema");
         System.out.println("3) Mostrar asignaturas matriculadas por un alumno");
         
         System.out.println("Opción: ");
