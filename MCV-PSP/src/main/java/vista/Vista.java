@@ -11,6 +11,7 @@ import modelo.Asignatura;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import modelo.Matricula;
 
 /**
  *
@@ -41,14 +42,29 @@ public class Vista {
     }
     
     public void printTablaAsignatura(ArrayList<Asignatura> array_asig){
-        
+
         for(Asignatura asignatura : array_asig){
             
             System.out.println(asignatura);
+            
         }
     }
     
+    public void printTablaMatricula(ArrayList<Matricula> array_matricula){
+        
+        for(Matricula matricula : array_matricula){
+            
+            System.out.println(matricula);
+        }
+    }
     
+    public String getDni_user(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dni del usuario: ");
+        String dni = sc.next();
+        
+        return dni;
+    }
     
     public void menu() throws SQLException{
         System.out.println("1) Mostrar alumnos pertenecientes al sistema");
@@ -66,16 +82,20 @@ public class Vista {
         switch(opcion){
             
             case 1:
-                ArrayList<Alumno> array_alumn = tabla_bd.printAlumno();
+                ArrayList<Alumno> array_alumn = tabla_bd.getTablaAlumno();
                 this.printTablaALumno(array_alumn);
                 tabla_bd.cleanArrayAlumno(array_alumn);
                 break;
             case 2:
-                ArrayList<Asignatura> array_asignatura = tabla_bd.printAsignatura();
+                ArrayList<Asignatura> array_asignatura = tabla_bd.getTablaAsignatura();
                 this.printTablaAsignatura(array_asignatura);
                 tabla_bd.cleanArrayAsignatura(array_asignatura);
                 break;
             case 3:
+                String dni = this.getDni_user();
+                ArrayList<Matricula> array_matricula = tabla_bd.getTablaMatricula(dni);
+                this.printTablaMatricula(array_matricula);
+                tabla_bd.cleanArrayMatricula(array_matricula);
                 break;
             case 4:
                 this.setBucle(false);
