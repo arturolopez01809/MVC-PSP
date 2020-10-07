@@ -5,7 +5,9 @@
  */
 package vista;
 
-import controlador.TablaBD;
+import controlador.AlumnoController;
+import controlador.AsignaturaController;
+import controlador.MatriculaController;
 import modelo.Alumno;
 import modelo.Asignatura;
 import java.sql.SQLException;
@@ -77,25 +79,26 @@ public class Vista {
         
         int opcion = sc.nextInt();
         
-        TablaBD tabla_bd = new TablaBD();
-        
         switch(opcion){
             
             case 1:
-                ArrayList<Alumno> array_alumn = tabla_bd.getTablaAlumno();
+                AlumnoController alumn_controller = new AlumnoController();
+                ArrayList<Alumno> array_alumn = alumn_controller.getTablaAlumno();
                 this.printTablaALumno(array_alumn);
-                tabla_bd.cleanArrayAlumno(array_alumn);
+                
                 break;
             case 2:
-                ArrayList<Asignatura> array_asignatura = tabla_bd.getTablaAsignatura();
+                AsignaturaController asig_controller = new AsignaturaController();
+                ArrayList<Asignatura> array_asignatura = asig_controller.getTablaAsignatura();
                 this.printTablaAsignatura(array_asignatura);
-                tabla_bd.cleanArrayAsignatura(array_asignatura);
+                
                 break;
             case 3:
+                MatriculaController matricula_controller = new MatriculaController();
                 String dni = this.getDni_user();
-                ArrayList<Matricula> array_matricula = tabla_bd.getTablaMatricula(dni);
+                ArrayList<Matricula> array_matricula = matricula_controller.getTablaMatricula(dni);
                 this.printTablaMatricula(array_matricula);
-                tabla_bd.cleanArrayMatricula(array_matricula);
+                
                 break;
             case 4:
                 this.setBucle(false);
