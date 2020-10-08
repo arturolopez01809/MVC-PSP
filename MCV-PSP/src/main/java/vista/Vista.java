@@ -86,6 +86,14 @@ public class Vista {
                 ArrayList<Alumno> array_alumn = alumn_controller.getTablaAlumno();
                 this.printTablaALumno(array_alumn);
                 
+                alumn_controller.getArray_alumno().get(1).setApellido("Cabezazo de Zidane");
+                
+                System.out.println("Array de controlador");
+                System.out.println(alumn_controller.getArray_alumno());
+                System.out.println("Array de Vista");
+                System.out.println(array_alumn);
+                
+                
                 break;
             case 2:
                 AsignaturaController asig_controller = new AsignaturaController();

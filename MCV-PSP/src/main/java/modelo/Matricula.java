@@ -85,7 +85,7 @@ public class Matricula extends ConnectionJDBC{
 
     @Override
     public String toString() {
-        return "Matricula{" + "dni = " + dni + ", cod_asig = " + cod_asig + '}';
+        return "\nMatricula{" + "\nDni = " + dni + "\nCod_asig = " + cod_asig + "}\n";
     }
     
     

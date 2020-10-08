@@ -19,7 +19,6 @@ public class Alumno extends ConnectionJDBC{
     private String dni;
     private String nombre;
     private String apellido;
-    
     private ArrayList<Alumno> array_alumno;
     
     private final String SQL_SELECT_ALUMNO = "SELECT * FROM alumno";
@@ -53,6 +52,14 @@ public class Alumno extends ConnectionJDBC{
 
     public String getApellido() {
         return apellido;
+    }
+
+    public void setArray_alumno(ArrayList<Alumno> array_alumno) {
+        this.array_alumno = array_alumno;
+    }
+    
+    public ArrayList<Alumno> getArray_alumno() {
+        return array_alumno;
     }
     
     
@@ -95,8 +102,7 @@ public class Alumno extends ConnectionJDBC{
     
     @Override
     public String toString() {
-        return "Alumno{" + "dni = " + dni + ", nombre = " + nombre + ", apellido = " + apellido + '}';
+        return "Alumno{" + "\nDni = " + dni + "\nNombre = " + nombre + "\nApellido = " + apellido + "}\n";
     }
-    
     
 }

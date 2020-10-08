@@ -80,7 +80,7 @@ public class Asignatura extends ConnectionJDBC{
 
     @Override
     public String toString() {
-        return "Asignatura{" + "cod_asig = " + cod_asig + ", nom_asig = " + nom_asig + '}';
+        return "\nAsignatura{" + "\nCod_asig = " + cod_asig + "\nNom_asig = " + nom_asig + "\n}";
     }
     
     

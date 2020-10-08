@@ -32,6 +32,13 @@ public class AlumnoController {
         
           Alumno alumn = new Alumno();
           this.setArray_alumno(alumn.getTablaAlumno());
+          
+//          this.getArray_alumno().get(0).setNombre("prueba");
+//          System.out.println(this.getArray_alumno().get(0));
+//          System.out.println("Array de controller");
+//          System.out.println(alumn.getArray_alumno().get(0));
+//          System.out.println("Array de modelo");
+          
           return this.getArray_alumno();
         
     }
